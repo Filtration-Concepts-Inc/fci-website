@@ -31,7 +31,7 @@ export default function InstallationPage() {
         title="Installation Services"
         subtitle="UV germicidal systems and cottonwood screens — installed right, by people who know HVAC."
         breadcrumb="Installation"
-        backgroundImage="/site-images/installation banner photo.png"
+        backgroundImage="/site-images/Installation banner photo.png"
               cinematic
       />
 
