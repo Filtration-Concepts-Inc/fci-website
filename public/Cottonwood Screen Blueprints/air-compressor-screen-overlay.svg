@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1142 738" width="1142" height="738">
+  <style>
+    #screen-border { stroke-dasharray: 1; stroke-dashoffset: 1; animation: drawBorder 0.8s ease-out forwards; }
+    #screen-mesh line { stroke-dasharray: 1; stroke-dashoffset: 1; animation: drawLine 0.3s ease-out forwards;
+      animation-delay: calc(0.8s + var(--i) * 0.0569s); }
+    @keyframes drawBorder { to { stroke-dashoffset: 0; } }
+    @keyframes drawLine { to { stroke-dashoffset: 0; } }
+  </style>
+  <defs><clipPath id="screen-clip"><polygon points="333,341 478,339 478,545 332,510"/></clipPath></defs>
+  <g id="screen-mesh" clip-path="url(#screen-clip)" stroke="#0a0a0a" stroke-width="0.7" stroke-linecap="butt">
+    <line pathLength="1" style="--i:0" x1="333.0" y1="341.0" x2="332.0" y2="510.0"/>
+    <line pathLength="1" style="--i:1" x1="339.0" y1="340.9" x2="338.1" y2="511.5"/>
+    <line pathLength="1" style="--i:2" x1="345.1" y1="340.8" x2="344.2" y2="512.9"/>
+    <line pathLength="1" style="--i:3" x1="351.1" y1="340.8" x2="350.2" y2="514.4"/>
+    <line pathLength="1" style="--i:4" x1="357.2" y1="340.7" x2="356.3" y2="515.8"/>
+    <line pathLength="1" style="--i:5" x1="363.2" y1="340.6" x2="362.4" y2="517.3"/>
+    <line pathLength="1" style="--i:6" x1="369.2" y1="340.5" x2="368.5" y2="518.8"/>
+    <line pathLength="1" style="--i:7" x1="375.3" y1="340.4" x2="374.6" y2="520.2"/>
+    <line pathLength="1" style="--i:8" x1="381.3" y1="340.3" x2="380.7" y2="521.7"/>
+    <line pathLength="1" style="--i:9" x1="387.4" y1="340.2" x2="386.8" y2="523.1"/>
+    <line pathLength="1" style="--i:10" x1="393.4" y1="340.2" x2="392.8" y2="524.6"/>
+    <line pathLength="1" style="--i:11" x1="399.5" y1="340.1" x2="398.9" y2="526.0"/>
+    <line pathLength="1" style="--i:12" x1="405.5" y1="340.0" x2="405.0" y2="527.5"/>
+    <line pathLength="1" style="--i:13" x1="411.5" y1="339.9" x2="411.1" y2="529.0"/>
+    <line pathLength="1" style="--i:14" x1="417.6" y1="339.8" x2="417.2" y2="530.4"/>
+    <line pathLength="1" style="--i:15" x1="423.6" y1="339.8" x2="423.2" y2="531.9"/>
+    <line pathLength="1" style="--i:16" x1="429.7" y1="339.7" x2="429.3" y2="533.3"/>
+    <line pathLength="1" style="--i:17" x1="435.7" y1="339.6" x2="435.4" y2="534.8"/>
+    <line pathLength="1" style="--i:18" x1="441.8" y1="339.5" x2="441.5" y2="536.2"/>
+    <line pathLength="1" style="--i:19" x1="447.8" y1="339.4" x2="447.6" y2="537.7"/>
+    <line pathLength="1" style="--i:20" x1="453.8" y1="339.3" x2="453.7" y2="539.2"/>
+    <line pathLength="1" style="--i:21" x1="459.9" y1="339.2" x2="459.8" y2="540.6"/>
+    <line pathLength="1" style="--i:22" x1="465.9" y1="339.2" x2="465.8" y2="542.1"/>
+    <line pathLength="1" style="--i:23" x1="472.0" y1="339.1" x2="471.9" y2="543.5"/>
+    <line pathLength="1" style="--i:24" x1="478.0" y1="339.0" x2="478.0" y2="545.0"/>
+    <line pathLength="1" style="--i:25" x1="333.0" y1="347.0" x2="478.0" y2="346.4"/>
+    <line pathLength="1" style="--i:26" x1="332.9" y1="353.1" x2="478.0" y2="353.7"/>
+    <line pathLength="1" style="--i:27" x1="332.9" y1="359.1" x2="478.0" y2="361.1"/>
+    <line pathLength="1" style="--i:28" x1="332.9" y1="365.1" x2="478.0" y2="368.4"/>
+    <line pathLength="1" style="--i:29" x1="332.8" y1="371.2" x2="478.0" y2="375.8"/>
+    <line pathLength="1" style="--i:30" x1="332.8" y1="377.2" x2="478.0" y2="383.1"/>
+    <line pathLength="1" style="--i:31" x1="332.8" y1="383.2" x2="478.0" y2="390.5"/>
+    <line pathLength="1" style="--i:32" x1="332.7" y1="389.3" x2="478.0" y2="397.9"/>
+    <line pathLength="1" style="--i:33" x1="332.7" y1="395.3" x2="478.0" y2="405.2"/>
+    <line pathLength="1" style="--i:34" x1="332.6" y1="401.4" x2="478.0" y2="412.6"/>
+    <line pathLength="1" style="--i:35" x1="332.6" y1="407.4" x2="478.0" y2="419.9"/>
+    <line pathLength="1" style="--i:36" x1="332.6" y1="413.4" x2="478.0" y2="427.3"/>
+    <line pathLength="1" style="--i:37" x1="332.5" y1="419.5" x2="478.0" y2="434.6"/>
+    <line pathLength="1" style="--i:38" x1="332.5" y1="425.5" x2="478.0" y2="442.0"/>
+    <line pathLength="1" style="--i:39" x1="332.5" y1="431.5" x2="478.0" y2="449.4"/>
+    <line pathLength="1" style="--i:40" x1="332.4" y1="437.6" x2="478.0" y2="456.7"/>
+    <line pathLength="1" style="--i:41" x1="332.4" y1="443.6" x2="478.0" y2="464.1"/>
+    <line pathLength="1" style="--i:42" x1="332.4" y1="449.6" x2="478.0" y2="471.4"/>
+    <line pathLength="1" style="--i:43" x1="332.3" y1="455.7" x2="478.0" y2="478.8"/>
+    <line pathLength="1" style="--i:44" x1="332.3" y1="461.7" x2="478.0" y2="486.1"/>
+    <line pathLength="1" style="--i:45" x1="332.2" y1="467.8" x2="478.0" y2="493.5"/>
+    <line pathLength="1" style="--i:46" x1="332.2" y1="473.8" x2="478.0" y2="500.9"/>
+    <line pathLength="1" style="--i:47" x1="332.2" y1="479.8" x2="478.0" y2="508.2"/>
+    <line pathLength="1" style="--i:48" x1="332.1" y1="485.9" x2="478.0" y2="515.6"/>
+    <line pathLength="1" style="--i:49" x1="332.1" y1="491.9" x2="478.0" y2="522.9"/>
+    <line pathLength="1" style="--i:50" x1="332.1" y1="497.9" x2="478.0" y2="530.3"/>
+    <line pathLength="1" style="--i:51" x1="332.0" y1="504.0" x2="478.0" y2="537.6"/>
+  </g>
+  <polygon id="screen-border" pathLength="1" points="333,341 478,339 478,545 332,510" fill="none" stroke="#0a0a0a" stroke-width="10" stroke-linejoin="miter"/>
+</svg>

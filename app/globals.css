@@ -2,14 +2,62 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+:root {
+  --button-ripple-color: oklch(0.145 0 0 / 0.3);
+  --white: #ffffff;
+  --black: #000000;
+  --transparent: transparent;
+  /* FCI aurora colors — sky blue, soft blue-gray, muted red accent */
+  --fci-aurora-1: #7dd3fc;
+  --fci-aurora-2: #93c5fd;
+  --fci-aurora-3: #bfdbfe;
+  --fci-aurora-4: #fca5a5;
+  --fci-aurora-5: #60a5fa;
+}
+
+@keyframes logo-spin-3d {
+  0%   { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.logo-spin-3d {
+  animation: logo-spin-3d 6s linear infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes sky-drift {
+  0%   { transform: scale(1.12) translate(0%, 0%); }
+  50%  { transform: scale(1.12) translate(-4%, -1.5%); }
+  100% { transform: scale(1.12) translate(0%, 0%); }
+}
+
+@keyframes float-paths-pulse {
+  0%, 100% { opacity: 0.18; }
+  50% { opacity: 0.28; }
+}
+
+@keyframes aurora {
+  from {
+    background-position: 50% 50%, 50% 50%;
+  }
+  to {
+    background-position: 350% 50%, 350% 50%;
+  }
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-poppins);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-poppins);
+  --color-fci-red: #CC0000;
+  --color-fci-dark: #1a1a1a;
+  --color-fci-gray: #555555;
+  --color-fci-light: #f7f7f7;
+  --animate-aurora: aurora 60s linear infinite;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -55,7 +103,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: oklch(0.4 0.22 27);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -127,4 +175,14 @@
   html {
     @apply font-sans;
   }
+}
+
+/* ── Cottonwood screen overlay animation ── */
+@keyframes draw-screen-border {
+  from { stroke-dashoffset: 1510; }
+  to   { stroke-dashoffset: 0; }
+}
+@keyframes draw-screen-line {
+  from { stroke-dashoffset: 600; }
+  to   { stroke-dashoffset: 0; }
 }

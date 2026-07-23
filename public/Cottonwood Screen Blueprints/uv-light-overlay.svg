@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1264 848" width="1264" height="848">
+  <defs>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <filter id="bigGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+  
+  <style>
+    .uv-element {
+      opacity: 0;
+      animation: fadeIn 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+  </style>
+
+  <g class="uv-element">
+    <line x1="632" y1="306" x2="851" y2="323" stroke="#5b8ee0" stroke-width="32" stroke-linecap="round" filter="url(#bigGlow)" opacity="0.5"/>
+    <line x1="632" y1="306" x2="851" y2="323" stroke="#a8c8ff" stroke-width="14" stroke-linecap="round" filter="url(#softGlow)"/>
+    <line x1="632" y1="306" x2="851" y2="323" stroke="#f0f6ff" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <g class="uv-element">
+    <line x1="631" y1="515" x2="854" y2="489" stroke="#5b8ee0" stroke-width="32" stroke-linecap="round" filter="url(#bigGlow)" opacity="0.5"/>
+    <line x1="631" y1="515" x2="854" y2="489" stroke="#a8c8ff" stroke-width="14" stroke-linecap="round" filter="url(#softGlow)"/>
+    <line x1="631" y1="515" x2="854" y2="489" stroke="#f0f6ff" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>
