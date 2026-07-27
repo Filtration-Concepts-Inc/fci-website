@@ -13,6 +13,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "FCI – Filtration Concepts Inc.",
   description: "Helping You Breathe a Little Easier. Air filtration products, filter service, and installation in Wisconsin.",
+  verification: {
+    google: "EV8f4rJxlwbHt46cHclu-ma49Gg0VL0Ko8-ZS8jCBSo",
+  },
 };
 
 export default function RootLayout({
