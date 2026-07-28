@@ -9,14 +9,33 @@ import { HoverButton } from '@/components/ui/hover-glow-button'
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setLoading(true)
-    // Simulate submission
-    await new Promise((r) => setTimeout(r, 1000))
+    setError(false)
+    const form = e.currentTarget
+    const data = {
+      firstName: (form.elements.namedItem('firstName') as HTMLInputElement).value,
+      lastName: (form.elements.namedItem('lastName') as HTMLInputElement).value,
+      company: (form.elements.namedItem('company') as HTMLInputElement).value,
+      email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
+      serviceArea: (form.elements.namedItem('serviceArea') as HTMLSelectElement).value,
+      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+    }
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
     setLoading(false)
-    setSubmitted(true)
+    if (res.ok) {
+      setSubmitted(true)
+    } else {
+      setError(true)
+    }
   }
 
   return (
@@ -113,6 +132,7 @@ export default function ContactPage() {
                       <label className="block text-sm font-medium text-[#1a1a1a] mb-1.5">First Name</label>
                       <input
                         type="text"
+                        name="firstName"
                         required
                         placeholder="John"
                         className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#CC0000] transition-colors"
@@ -122,6 +142,7 @@ export default function ContactPage() {
                       <label className="block text-sm font-medium text-[#1a1a1a] mb-1.5">Last Name</label>
                       <input
                         type="text"
+                        name="lastName"
                         required
                         placeholder="Smith"
                         className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#CC0000] transition-colors"
@@ -133,6 +154,7 @@ export default function ContactPage() {
                     <label className="block text-sm font-medium text-[#1a1a1a] mb-1.5">Company</label>
                     <input
                       type="text"
+                      name="company"
                       placeholder="Acme Corp"
                       className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#CC0000] transition-colors"
                     />
@@ -143,6 +165,7 @@ export default function ContactPage() {
                       <label className="block text-sm font-medium text-[#1a1a1a] mb-1.5">Email</label>
                       <input
                         type="email"
+                        name="email"
                         required
                         placeholder="john@acme.com"
                         className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#CC0000] transition-colors"
@@ -152,6 +175,7 @@ export default function ContactPage() {
                       <label className="block text-sm font-medium text-[#1a1a1a] mb-1.5">Phone</label>
                       <input
                         type="tel"
+                        name="phone"
                         placeholder="(262) 555-1234"
                         className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#CC0000] transition-colors"
                       />
@@ -160,7 +184,7 @@ export default function ContactPage() {
 
                   <div>
                     <label className="block text-sm font-medium text-[#1a1a1a] mb-1.5">Service Area</label>
-                    <select className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#CC0000] transition-colors bg-white">
+                    <select name="serviceArea" className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#CC0000] transition-colors bg-white">
                       <option value="">Select your area</option>
                       <option>Milwaukee / Lannon Area</option>
                       <option>Green Bay / Luxemburg Area</option>
@@ -172,6 +196,7 @@ export default function ContactPage() {
                   <div>
                     <label className="block text-sm font-medium text-[#1a1a1a] mb-1.5">How can we help?</label>
                     <textarea
+                      name="message"
                       required
                       rows={5}
                       placeholder="Tell us about your filtration needs..."
@@ -190,6 +215,9 @@ export default function ContactPage() {
                   >
                     {loading ? 'Sending...' : 'Send Message'}
                   </HoverButton>
+                  {error && (
+                    <p className="text-sm text-red-600 text-center">Something went wrong. Please try again or call us directly.</p>
+                  )}
                 </form>
               )}
             </motion.div>
