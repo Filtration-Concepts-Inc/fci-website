@@ -22,6 +22,10 @@ export default function ContactPage() {
       company: (form.elements.namedItem('company') as HTMLInputElement).value,
       email: (form.elements.namedItem('email') as HTMLInputElement).value,
       phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
+      serviceAddress: (form.elements.namedItem('serviceAddress') as HTMLInputElement).value,
+      city: (form.elements.namedItem('city') as HTMLInputElement).value,
+      state: (form.elements.namedItem('state') as HTMLInputElement).value,
+      zip: (form.elements.namedItem('zip') as HTMLInputElement).value,
       serviceArea: (form.elements.namedItem('serviceArea') as HTMLSelectElement).value,
       message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
     }
@@ -168,6 +172,46 @@ export default function ContactPage() {
                         type="tel"
                         name="phone"
                         placeholder="(262) 555-1234"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#CC0000] transition-colors"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-[#1a1a1a] mb-1.5">Service Address</label>
+                    <input
+                      type="text"
+                      name="serviceAddress"
+                      placeholder="409 Swan Rd"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#CC0000] transition-colors"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
+                    <div className="col-span-1">
+                      <label className="block text-sm font-medium text-[#1a1a1a] mb-1.5">City</label>
+                      <input
+                        type="text"
+                        name="city"
+                        placeholder="Lannon"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#CC0000] transition-colors"
+                      />
+                    </div>
+                    <div className="col-span-1">
+                      <label className="block text-sm font-medium text-[#1a1a1a] mb-1.5">State</label>
+                      <input
+                        type="text"
+                        name="state"
+                        placeholder="Wisconsin"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#CC0000] transition-colors"
+                      />
+                    </div>
+                    <div className="col-span-2 sm:col-span-1">
+                      <label className="block text-sm font-medium text-[#1a1a1a] mb-1.5">Zip Code</label>
+                      <input
+                        type="text"
+                        name="zip"
+                        placeholder="53046"
                         className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#CC0000] transition-colors"
                       />
                     </div>
