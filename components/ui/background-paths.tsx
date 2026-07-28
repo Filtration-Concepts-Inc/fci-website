@@ -73,6 +73,17 @@ export function BackgroundPaths({ title = "Helping You Breathe a Little Easier",
 
           {/* Subtle overlay for text readability */}
           <div className="absolute inset-0 bg-black/5" style={{ zIndex: 3 }} />
+
+          {/* Top gradient — darkens sky in the iOS status-bar zone so the frosted
+              glass renders over dark content and looks transparent instead of grey */}
+          <div
+            className="absolute inset-x-0 top-0 pointer-events-none"
+            style={{
+              height: '120px',
+              background: 'linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%)',
+              zIndex: 4,
+            }}
+          />
         </>
       )}
 
