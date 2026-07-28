@@ -254,7 +254,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const isHome = pathname === '/'
-    const NAV_H = 90
+    const NAV_H = (document.querySelector('header') as HTMLElement)?.offsetHeight ?? 90
     const getEnd = () => {
       if (isHome) return window.innerHeight
       const hero = document.querySelector('section') as HTMLElement | null
@@ -277,7 +277,10 @@ export default function Navbar() {
     <>
       <header
         className="fixed top-0 left-0 right-0 z-50"
-        style={{ height: '90px' }}
+        style={{
+          height: 'calc(90px + env(safe-area-inset-top))',
+          paddingTop: 'env(safe-area-inset-top)',
+        }}
       >
         {/* Black + red paths — Scroll Banner A: right→left | Scroll Banner B: top→down */}
         <div
