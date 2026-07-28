@@ -1,15 +1,15 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import PageHero from '@/components/shared/PageHero'
 import { Phone, MapPin, Mail, CheckCircle2 } from 'lucide-react'
 import { HoverButton } from '@/components/ui/hover-glow-button'
 
 export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
+  const [toast, setToast] = useState(false)
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -32,7 +32,9 @@ export default function ContactPage() {
     })
     setLoading(false)
     if (res.ok) {
-      setSubmitted(true)
+      form.reset()
+      setToast(true)
+      setTimeout(() => setToast(false), 5000)
     } else {
       setError(true)
     }
@@ -115,18 +117,7 @@ export default function ContactPage() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-2"
             >
-              {submitted ? (
-                <div className="flex flex-col items-center justify-center h-full text-center py-16">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                    <CheckCircle2 size={32} className="text-green-600" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-[#1a1a1a] mb-2">Message Sent!</h3>
-                  <p className="text-gray-500 max-w-sm">
-                    Thanks for reaching out. We&apos;ll get back to you within one business day.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-sm font-medium text-[#1a1a1a] mb-1.5">First Name</label>
@@ -219,11 +210,25 @@ export default function ContactPage() {
                     <p className="text-sm text-red-600 text-center">Something went wrong. Please try again or call us directly.</p>
                   )}
                 </form>
-              )}
             </motion.div>
           </div>
         </div>
       </section>
+
+      <AnimatePresence>
+        {toast && (
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 40 }}
+            transition={{ duration: 0.35 }}
+            className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 bg-[#1a1a1a] text-white px-6 py-4 rounded-2xl shadow-2xl"
+          >
+            <CheckCircle2 size={20} className="text-green-400 shrink-0" />
+            <p className="text-sm font-medium">Thanks for reaching out — someone from our team will get back to you within one business day.</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }
