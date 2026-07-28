@@ -40,7 +40,7 @@ export async function POST(req: Request) {
             ${row('City', city, false)}
             ${row('State', state, true)}
             ${row('Zip', zip, false)}
-            ${row('Service Area', serviceArea, true)}
+            ${row('Requested Service', serviceArea, true)}
             ${row('How can we help?', message, false)}
           </tbody>
         </table>

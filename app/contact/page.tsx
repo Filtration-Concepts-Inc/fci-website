@@ -218,13 +218,14 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-[#1a1a1a] mb-1.5">Service Area</label>
+                    <label className="block text-sm font-medium text-[#1a1a1a] mb-1.5">Requested Service</label>
                     <select name="serviceArea" className="w-full px-4 py-3 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#CC0000] transition-colors bg-white">
-                      <option value="">Select your area</option>
-                      <option>Milwaukee / Lannon Area</option>
-                      <option>Green Bay / Luxemburg Area</option>
-                      <option>Other Wisconsin</option>
-                      <option>Outside Wisconsin</option>
+                      <option value="">Select a service</option>
+                      <option>Cottonwood Screen Installation</option>
+                      <option>UV Installation</option>
+                      <option>Filter Changing Service</option>
+                      <option>Filter Quote</option>
+                      <option>Other</option>
                     </select>
                   </div>
 
