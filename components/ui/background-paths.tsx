@@ -36,7 +36,7 @@ export function BackgroundPaths({ title = "Helping You Breathe a Little Easier",
   const words = title.split(" ");
 
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden" style={variant === 'B' ? { background: '#000' } : undefined}>
+    <div className="relative w-full flex items-center justify-center overflow-hidden" style={{ minHeight: '100dvh', ...(variant === 'B' ? { background: '#000' } : {}) }}>
 
       {/* ── VARIANT A: Blue sky + ken burns ── */}
       {variant === 'A' && (
