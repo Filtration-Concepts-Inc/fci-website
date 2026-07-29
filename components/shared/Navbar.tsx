@@ -151,7 +151,7 @@ function MobileDrawer({ open, onClose, pathname }: { open: boolean; onClose: () 
           >
             {/* Drawer header */}
             <div className="flex items-center justify-between px-5 py-5 border-b border-white/10">
-              <img src="/Logo's/FCI white logo.png" alt="FCI" style={{ height: '38px', width: 'auto' }} />
+              <img src="/Logo's/FCI-white-logo.png" alt="FCI" style={{ height: '38px', width: 'auto' }} />
               <button onClick={onClose} className="text-white/70 hover:text-white p-1">
                 <X size={22} />
               </button>
@@ -305,7 +305,7 @@ export default function Navbar() {
           <Link href="/" className="shrink-0 hover:opacity-80 transition-opacity">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/Logo's/FCI white logo.png"
+              src="/Logo's/FCI-white-logo.png"
               alt="Filtration Concepts, Inc."
               style={{ height: '52px', width: 'auto', filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.6))' }}
             />
