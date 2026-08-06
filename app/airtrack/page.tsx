@@ -97,7 +97,7 @@ export default function AirTrackPage() {
             })}
           </div>
           <div className="flex flex-col items-center gap-3 mt-12">
-            <Link href="#">
+            <Link href="https://portal.fciwisconsin.com/user/login" target="_blank" rel="noopener noreferrer">
               <HoverButton backgroundColor="rgba(204,0,0,0.85)" textColor="#ffffff" hoverTextColor="#ffffff" glowColor="#ff4444" className="px-10 py-3 text-base font-semibold shadow-lg border border-white/10">
                 AirTrack Login →
               </HoverButton>
