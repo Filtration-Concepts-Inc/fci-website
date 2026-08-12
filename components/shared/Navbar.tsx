@@ -43,6 +43,7 @@ const navLinks: NavLink[] = [
     ],
   },
   { href: '/airtrack', label: 'AirTrack' },
+  { href: '/resources', label: 'Resources' },
   { href: '/locations', label: 'Locations' },
 ]
 

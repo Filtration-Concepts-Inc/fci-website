@@ -7,7 +7,7 @@ import Link from 'next/link'
 import PageHero from '@/components/shared/PageHero'
 import CTABanner from '@/components/home/CTABanner'
 import { HoverButton } from '@/components/ui/hover-glow-button'
-import { X, Download, Scissors } from 'lucide-react'
+import { X, Download, Scissors, ChevronRight, BookOpen } from 'lucide-react'
 
 interface Product {
   name: string
@@ -57,6 +57,77 @@ const categories: { heading: string; id: string; products: Product[] }[] = [
     ],
   },
 ]
+
+function MervGuidePanel() {
+  const [open, setOpen] = useState(true)
+
+  return (
+    <div className="fixed left-0 top-1/2 -translate-y-1/2 z-40 hidden lg:block">
+      <AnimatePresence initial={false} mode="wait">
+        {open ? (
+          <motion.div
+            key="panel"
+            initial={{ x: '-100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '-100%' }}
+            transition={{ type: 'spring', stiffness: 280, damping: 28 }}
+            className="w-60 bg-[#1a1a1a] rounded-r-2xl shadow-2xl border-r border-t border-b border-white/10 overflow-hidden"
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between px-4 pt-4 pb-3 border-b border-white/10">
+              <div className="flex items-center gap-2">
+                <BookOpen size={14} className="text-[#CC0000]" />
+                <span className="text-xs font-bold uppercase tracking-widest text-[#CC0000]">Filter Guide</span>
+              </div>
+              <button
+                onClick={() => setOpen(false)}
+                className="text-white/40 hover:text-white/80 transition-colors p-0.5"
+                aria-label="Collapse guide"
+              >
+                <X size={14} />
+              </button>
+            </div>
+
+            {/* Body */}
+            <div className="px-4 py-4">
+              <p className="text-white text-sm font-semibold leading-snug">
+                Not sure which rating fits your facility?
+              </p>
+              <p className="text-gray-400 text-xs mt-2 leading-relaxed">
+                Our MERV guide breaks down every rating level and what industries typically use each one.
+              </p>
+              <Link
+                href="/resources/merv-ratings"
+                className="mt-4 flex items-center justify-center gap-2 bg-[#CC0000] hover:bg-[#aa0000] text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-colors w-full"
+              >
+                Learn About MERV Ratings →
+              </Link>
+            </div>
+          </motion.div>
+        ) : (
+          <motion.button
+            key="tab"
+            initial={{ x: '-100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '-100%' }}
+            transition={{ type: 'spring', stiffness: 280, damping: 28 }}
+            onClick={() => setOpen(true)}
+            aria-label="Open MERV guide"
+            className="flex flex-col items-center gap-2 bg-[#1a1a1a] hover:bg-[#CC0000] border-r border-t border-b border-white/10 rounded-r-xl py-4 px-2.5 shadow-xl transition-colors duration-200 group"
+          >
+            <ChevronRight size={14} className="text-[#CC0000] group-hover:text-white transition-colors" />
+            <span
+              className="text-white/60 group-hover:text-white text-xs font-bold uppercase tracking-widest transition-colors"
+              style={{ writingMode: 'vertical-lr', transform: 'rotate(180deg)' }}
+            >
+              MERV Guide
+            </span>
+          </motion.button>
+        )}
+      </AnimatePresence>
+    </div>
+  )
+}
 
 function LiteratureModal({ product, onClose }: { product: Product; onClose: () => void }) {
   return (
@@ -250,6 +321,7 @@ export default function ProductsPage() {
 
   return (
     <>
+      <MervGuidePanel />
       <PageHero
         title="Products"
         subtitle="Over 1,000 air filtration products across all major filter types."

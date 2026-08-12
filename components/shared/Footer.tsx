@@ -31,6 +31,7 @@ export default function Footer() {
                 { href: '/products', label: 'Products' },
                 { href: '/services', label: 'Services' },
                 { href: '/airtrack', label: 'AirTrack' },
+                { href: '/resources', label: 'Resources' },
                 { href: '/locations', label: 'Locations' },
                 { href: '/contact', label: 'Contact' },
               ].map((link) => (
