@@ -131,8 +131,8 @@ export default function MervCaptureChart() {
                 initial={{ width: 0 }}
                 animate={{ width: inView || reduced ? tier.barW : 0 }}
                 transition={{
-                  duration: reduced ? 0 : 0.8,
-                  delay: reduced ? 0 : i * 0.12,
+                  duration: reduced ? 0 : 2.2,
+                  delay: reduced ? 0 : i * 0.3,
                   ease: 'easeOut',
                 }}
               />
@@ -147,7 +147,7 @@ export default function MervCaptureChart() {
                   fontFamily="inherit"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: inView || reduced ? 1 : 0 }}
-                  transition={{ duration: reduced ? 0 : 0.4, delay: reduced ? 0 : i * 0.12 + 0.5 }}
+                  transition={{ duration: reduced ? 0 : 0.6, delay: reduced ? 0 : i * 0.3 + 1.8 }}
                 >
                   {tier.desc}
                 </motion.text>
