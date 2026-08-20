@@ -12,7 +12,7 @@ const locations = [
     city: 'Lannon, WI 53046',
     phone: '(262) 251-3233',
     phoneHref: 'tel:2622513233',
-    hours: 'Mon–Fri: 7:30am – 5:00pm',
+    hours: 'Mon–Fri: 7:00am – 4:00pm',
     mapEmbed:
       'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2912.0!2d-88.16!3d43.14!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDA4JzI0LjAiTiA4OMKwMDknMzYuMCJX!5e0!3m2!1sen!2sus!4v1617000000000!5m2!1sen!2sus',
   },
@@ -22,7 +22,7 @@ const locations = [
     city: 'Luxemburg, WI 54217',
     phone: '(920) 845-2449',
     phoneHref: 'tel:9208452449',
-    hours: 'Mon–Fri: 7:30am – 5:00pm',
+    hours: 'Mon–Fri: 7:00am – 4:00pm',
     mapEmbed:
       'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2912.0!2d-87.71!3d44.54!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDMyJzI0LjAiTiA4N8KwNDInMzYuMCJX!5e0!3m2!1sen!2sus!4v1617000000000!5m2!1sen!2sus',
   },
